@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     8/1/2018 12:45:02                            */
+/* Created on:     8/1/2018 18:53:48                            */
 /*==============================================================*/
 
 
@@ -48,7 +48,7 @@ create table OBJETO_APRENDIJZAJE
    ID_OA                int not null auto_increment,
    ID_S                 int,
    ID_TEMA              int,
-   NOMBRE               varchar(30),
+   ID_U                 int,
    TITULO               varchar(30),
    DESCRIPCION          varchar(100),
    RUTA                 varchar(100),
@@ -93,9 +93,10 @@ create table TEMA
 /*==============================================================*/
 create table USUARIO
 (
-   NOMBRE               varchar(30) not null,
+   NOMBRE               varchar(30),
    INSTITUCION          varchar(30),
-   primary key (NOMBRE)
+   ID_U                 int not null auto_increment,
+   primary key (ID_U)
 );
 
 alter table HERRAMIENTA_OA add constraint FK_R1 foreign key (ID_S)
@@ -107,8 +108,8 @@ alter table OBJETO_APRENDIJZAJE add constraint FK_R2 foreign key (ID_S)
 alter table OBJETO_APRENDIJZAJE add constraint FK_R3 foreign key (ID_TEMA)
       references TEMA (ID_TEMA) on delete restrict on update restrict;
 
-alter table OBJETO_APRENDIJZAJE add constraint FK_R4 foreign key (NOMBRE)
-      references USUARIO (NOMBRE) on delete restrict on update restrict;
+alter table OBJETO_APRENDIJZAJE add constraint FK_R4 foreign key (ID_U)
+      references USUARIO (ID_U) on delete restrict on update restrict;
 
 alter table R5 add constraint FK_R5 foreign key (ID_M)
       references MATERIA (ID_M) on delete restrict on update restrict;
