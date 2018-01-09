@@ -15,7 +15,7 @@ def cargar():
         query = "insert into usuario (nombre, Institucion) values (' "+ nombreA + "','" + institucion + "');"
         probaMySQL.run_query(query)
 
-        query = "insert into objeto_aprendijzaje (nombre, titulo, descripcion, ruta,fecha_creacion,palabras_clave) values ('" + nombreA + "','" + tituloO + "','" + Descripcion + "','" + Ruta + "','" + Fecha + "','" + PClave + "')"
+        query = "insert into objeto_aprendijzaje (id_u, titulo, descripcion, ruta,fecha_creacion,palabras_clave) values ((select id_u from usuario where nombre='"+nombreA+"'),'" + tituloO + "','" + Descripcion + "','" + Ruta + "','" + Fecha + "','" + PClave + "')"
         probaMySQL.run_query(query)
 
 
