@@ -1,0 +1,5 @@
+Este sistema permitira la creacion de objetos de aprendizaje donde
+podra tener varias funciones como Importar y catalogar Objetos de aprendizaje
+ademas de la funcion de buscar objetos de aprendizaje
+
+Esta creandose el repositorio por Andrea Villacis
